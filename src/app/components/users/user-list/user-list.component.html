@@ -1,0 +1,31 @@
+<article id="all" (window:resize)="onResize($event)">
+  <div id="tools">
+    <input type="text" [formControl]="userControl">
+    <button type="button"  (click)="massDelete()" [disabled]="selectedList.length ==0">Delete Selected</button>
+    <button type="button" (click)="download()" [disabled]="selectedList.length ==0">Download</button>
+  </div>
+<div id="big" *ngIf="big">
+<table>
+  <tr id="header">
+    <th>▢</th>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td *ngIf="!hide[user.id]"><input type="checkbox" (click)="addToDeleteList(user.id)"></td>
+    <td *ngIf="!hide[user.id]">{{user.firstName}} {{user.lastName}}</td>
+    <td *ngIf="!hide[user.id]"><a routerLink="/detail/{{user.id}}">Show</a> | <a id="delete" (click)="delete(user.id)">Delete</a></td>
+  </tr>
+</table>
+</div>
+<div id= "small" *ngIf="!big">
+  <div *ngFor="let user of users" >
+    <div id="box" *ngIf="!hide[user.id]">
+      <p>{{user.firstName}} {{user.lastName}}</p>
+      <p>Age: {{user.age}}</p>
+      <p>Description: {{user.description}}</p>
+      <p><input type="checkbox" (click)="addToDeleteList(user.id)"><a routerLink="/detail/{{user.id}}">|Show</a>|<a id="delete" (click)="delete(user.id)">Delete</a></p>
+    </div>
+  </div>
+</div>
+</article>
