@@ -19,7 +19,6 @@ export class UserService {
   // from the database 
 
   public getUsers():Observable<any[]>{
-    
     return of(this.USERS);
   }
 

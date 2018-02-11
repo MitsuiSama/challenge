@@ -56,7 +56,7 @@ export class UserListComponent implements OnInit {
 
   private delete(id,automated?) {
     if(!automated){
-      if(confirm("Are you sure you want to delete the selected user? This operation cannot be undone")){
+      if(confirm("Are you sure you want to delete the selected user? This operation cannot be undone.")){
         this.users = this.users.filter(item => item.id !== id);
       }
     }else{
@@ -67,7 +67,7 @@ export class UserListComponent implements OnInit {
 
 
   private massDelete() {
-    if (confirm("Are you sure you want to delete all selected users? This operation cannot be undone")) {
+    if (confirm("Are you sure you want to delete all selected users? This operation cannot be undone.")) {
 
       for (let item of this.selectedList) {
         this.delete(item,1);
