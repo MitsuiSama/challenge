@@ -5,6 +5,7 @@ import { UserService } from './../user.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
+import { log } from 'util';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     this.big = false;
+    this.adaptToScreenWidth();
     this.selectedList = [];
     this.userControl = new FormControl();
     this.userControl.valueChanges
@@ -94,8 +96,6 @@ export class UserListComponent implements OnInit {
         }
       }
     }
-    console.log(downloadList);
-    
     if(downloadList){
       let json = JSON.stringify(downloadList)
       let blob = new Blob([json], { type: 'text/json' });
@@ -109,12 +109,15 @@ export class UserListComponent implements OnInit {
   }
 
   onResize(event:any){
-    if(event.target.innerWidth >= 1024){
-      this.big = true;
+    this.adaptToScreenWidth();
+  }
+
+  adaptToScreenWidth(){
+    if(window.innerWidth >=1024){
+      this.big = true;      
     }else{
       this.big = false;
     }
-    
   }
 
 }

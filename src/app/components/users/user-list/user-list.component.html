@@ -14,7 +14,7 @@
   <tr *ngFor="let user of users">
     <td *ngIf="!hide[user.id]"><input type="checkbox" (click)="addToDeleteList(user.id)"></td>
     <td *ngIf="!hide[user.id]">{{user.firstName}} {{user.lastName}}</td>
-    <td *ngIf="!hide[user.id]"><a routerLink="/detail/{{user.id}}">Show</a> | <a id="delete" (click)="delete(user.id)">Delete</a></td>
+    <td *ngIf="!hide[user.id]"><a routerLink="/detail/{{user.id}}">Show</a> | <a routerLink="/edit/{{user.id}}">Edit</a> | <a id="delete" (click)="delete(user.id)">Delete</a></td>
   </tr>
 </table>
 </div>

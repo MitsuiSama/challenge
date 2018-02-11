@@ -1,0 +1,18 @@
+<div id="main">    
+    <div id="inputs">
+        <div id="fName">
+            <p>FirstName </p>
+            <input type="text" [(ngModel)]="firstName">
+        </div>
+        <div id="lName">
+            <p>Last Name</p>
+            <input type="text" [(ngModel)]="lastName">
+        </div>
+    </div>
+    <div id="control">
+        <button [disabled]="!shouldSave()" (click)="save()">Save</button>
+        <button [disabled]="!canCanel()" (click)="cancel()">Cancel</button>
+    </div>
+    
+    <a routerLink="/detail/{{user.id}}">Back</a>
+</div>

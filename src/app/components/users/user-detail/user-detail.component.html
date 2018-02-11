@@ -6,6 +6,7 @@
       <th>Last Name</th>
       <th>Age</th>
       <th>Details</th>
+      <th>Options</th>
     </tr>
     <tr>
       <th>{{user.id}}</th>
@@ -13,6 +14,7 @@
       <th>{{user.lastName}}</th>
       <th>{{user.age}}</th>
       <th>{{user.description}}</th>
+      <th><a routerLink="/edit/{{user.id}}">Edit</a></th>
     </tr>
   </table>
   <div>

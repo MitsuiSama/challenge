@@ -2,20 +2,17 @@
     padding: 40px;
     display: flex;
     flex-direction: column;
-    position: relative;
     margin: auto;
 }
 
 #tools {
     margin-bottom: 10px;
-    display: inline-block;
     justify-content: flex-start;
-    align-items: center;
+    align-items: left;
 }
 
 input[type="text"] {
       width: auto;
-  
 }
 
 #big{
@@ -24,13 +21,10 @@ input[type="text"] {
 }
 
 #small{
-    display: block;
-    
     flex-wrap: wrap;
     columns : 2;
     width: 100%;
     height: 90%;
-
 }
 
 #box{
